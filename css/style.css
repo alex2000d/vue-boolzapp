@@ -11,3 +11,24 @@ body{
     min-height: 100vh;
     background: linear-gradient(#009688 0%, #009688 130px, #d9dbd5 130px, #d9dbd5 100%);
 }
+
+.container{
+    position: relative;
+    width: 1100px;
+    max-width: 100%;
+    height: calc(100vh - 40px);
+    background-color: #fff;
+    display: flex;
+}
+
+.container .left-section{
+  position: relative;
+  flex: 30%;
+  background: #fff;
+}
+
+.container .right-section{
+    position: relative;
+    flex: 70%;
+    background-image: url(../img/mine.jpg);
+}
