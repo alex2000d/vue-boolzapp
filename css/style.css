@@ -44,12 +44,12 @@ body{
   gap: 15px;
 }
 
-/* sezione di sinistra */
+/* !colonna di sinistra */
 .left-column {
   background-color: gray;
   width: 35%;
 }
-/* main */
+/* *main */
 .main-left {
   height: calc(100% - 80px);
   display: flex;
@@ -111,7 +111,7 @@ body{
 .contacts li {
   border-bottom: 1px solid gray;
 }
-/* sezione di destra */
+/* !colonna di destra */
 .right-column {
   background-color: gray;
   width: 65%;
@@ -138,7 +138,41 @@ body{
   flex-direction: column;
   align-items: center;
 }
+.message {
+  width: 100%;
+  margin-bottom: 5px;
+}
+.text {
+  width: 40%;
+  border-radius: 10px;
+  padding: 20px;
+}
+.right-search {
+  background-color: rgb(194, 191, 191);
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.right-search input {
+  width: 80%;
+  padding: 10px;
+  border-radius: 10px;
+}
+.right-search i {
+   color: #d9dbd5;
+}
+.main-user{
+    display: flex;
+    align-items: center;
+    
+}
 
+.main-user-chat{
+    display: flex;
+    align-items: center;
+    background-color: #d9dbd5;
+}
 
 a{
     text-decoration: none;
