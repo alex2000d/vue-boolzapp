@@ -90,6 +90,8 @@ body{
     height: calc(100% - 60px);
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
+    
   }
 
   .notifications {
@@ -97,6 +99,13 @@ body{
     align-items: center;
     padding: 20px;
     background-color: rgb(85, 242, 253);
+  }
+
+  .notifications-chat {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #a5a5a5;
   }
   
   a{
