@@ -1,131 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>boolzapp</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boolzapp</title>
+    <script src="https://kit.fontawesome.com/d7e1ca7451.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    
+  </head>
+  <body>
     <div id="app">
-        <!-- contenitore per l'app -->
-        <div class="container">
-            <!-- *sezione di sinistra -->
-            <div class="left-section">
-              <!--header di sinistra -->
-              <div class="header-left">
-                <!-- info profilo -->
-                <div class="main-user">
-                  <div class="img-container">
-                    <img src="./img/avatar_io.jpg" alt="`Immagine di ${mainUser.name}`"/>
-                  </div>
-                  <h3>sofia</h3>
-                  <!-- icone -->
-                  <ul class="icons">
-                    <li><i class="fa-solid fa-circle-notch"></i></li>
-                    <li><i class="fa-solid fa-message"></i></li>
-                    <li><i class="fa-solid fa-ellipsis-vertical"></i></li>
-                  </ul>
-                </div>
+      <!-- *contenitore app-->
+      <div class="container">
+        <!-- *sezione di sinistra -->
+        <div class="left-column">
+          <!-- header di sinistra -->
+          <div class="header-left">
+            <!-- info profilo -->
+            <div class="main-user">
+              <div class="img-container">
+                <img src="./img/avatar_io.jpg" alt="`Immagine di ${mainUser.name}`"/>
               </div>
-              <!-- main sezione di sinistra -->
-              <div class="main-left">
-                <div class="notifications">
-                  <div class="icon-container">
-                    <i class="fa-solid fa-bell-slash"></i>
-                  </div>
-                  <div class="notifications-alert">
-                    <div>Ricevi notifiche di nuovi messaggi</div>
-                    <a href="#">Attiva notifiche desktop</a>
-                  </div>
-                </div>
-                <div class="serch">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <input  type="text" placeholder="cerca o inizia una nuova chat">
-                </div>
-                 <!-- sezione lista contatti -->
-                <div class="main-left">
-                    <div class="notifications-chat">
-                        <div class="icon-container">
-                            <img src="./img/avatar_1.jpg" alt="`Immagine di ${mainUser.name}`">
-                        </div>
-                      <div class="notifications-alert">
-                        <h3>michele</h3>
-                        <p>ultimo accesso</p>
-                      </div>
+              <h3>sofia</h3>
+            </div>
+            <!-- icone -->
+            <ul class="icons">
+              <li><i class="fa-solid fa-circle-notch"></i></li>
+              <li><i class="fa-solid fa-message"></i></li>
+              <li><i class="fa-solid fa-ellipsis-vertical"></i></li>
+            </ul>
+          </div>
+          
+          <div class="main-left">
+            <div class="notifications">
+              <div class="icon-container">
+                <i class="fa-solid fa-bell-slash"></i>
+              </div>
+              <div class="notifications-alert">
+                <p>Ricevi notifiche di nuovi messaggi</p>
+                <a href="index.html">Attiva notifiche desktop</a>
+              </div>
+            </div>
+
+            <div class="left-search">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="text" placeholder="Cerca o inizia una nuova chat" />
+            </div>
+
+            <!-- lista chat -->
+            <div class="contacts">
+              <ul>
+                <li v-for="contact in contacts">
+                  <!-- info -->
+                  <div class="main-user-chat">
+                    <div class="img-container">
+                      <img src="./img/avatar_1.jpg" alt="`Immagine di ${mainUser.name}`"/>
                     </div>
-                
-                    <div class="notifications-chat">
-                        <div class="icon-container">
-                         <img src="./img/avatar_2.jpg" alt="`Immagine di ${mainUser.name}`">
-                         </div>
-                         <div class="notifications-alert">
-                         <h3>fabio</h3>
-                         <p>ultimo accesso</p>
-                      </div>
-                     </div>
-                     <div class="notifications-chat">
-                        <div class="icon-container">
-                         <img src="./img/avatar_3.jpg" alt="`Immagine di ${mainUser.name}`">
-                         </div>
-                         <div class="notifications-alert">
-                         <h3>samuele</h3>
-                         <p>ultimo accesso</p>
-                      </div>
-                     </div>
-                     <div class="notifications-chat">
-                        <div class="icon-container">
-                         <img src="./img/avatar_4.jpg" alt="`Immagine di ${mainUser.name}`">
-                         </div>
-                         <div class="notifications-alert">
-                         <h3>alessandro B</h3>
-                         <p>ultimo accesso</p>
-                      </div>
-                     </div>
-                     <div class="notifications-chat">
-                        <div class="icon-container">
-                         <img src="./img/avatar_5.jpg" alt="`Immagine di ${mainUser.name}`">
-                         </div>
-                         <div class="notifications-alert">
-                         <h3>alessandro L</h3>
-                         <p>ultimo accesso</p>
-                      </div>
-                     </div>
-                     <div class="notifications-chat">
-                        <div class="icon-container">
-                         <img src="./img/avatar_6.jpg" alt="`Immagine di ${mainUser.name}`">
-                         </div>
-                         <div class="notifications-alert">
-                         <h3>Claudia</h3>
-                         <p>ultimo accesso</p>
-                      </div>
-                     </div>
-                     <div class="notifications-chat">
-                        <div class="icon-container">
-                         <img src="./img/avatar_7.jpg" alt="`Immagine di ${mainUser.name}`">
-                         </div>
-                         <div class="notifications-alert">
-                         <h3>federico</h3>
-                         <p>ultimo accesso</p>
-                      </div>
-                     </div>
-                     <div class="notifications-chat">
-                        <div class="icon-container">
-                         <img src="./img/avatar_8.jpg" alt="`Immagine di ${mainUser.name}`">
-                         </div>
-                         <div class="notifications-alert">
-                         <h3>davide</h3>
-                         <p>ultimo accesso</p>
-                      </div>
-                     </div>
-                </div>
-           <!-- sezione di destra -->
-           <div class="right-section"></div>
+                    <h4>michele</h4>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-    </div>
+
+        <!-- sezionedi destra-->
+        <div class="right-column">
+          <!-- chat col contatto specifico -->
+          <div class="contact-chat">
+            <!-- ?header di sinistra -->
+            <div class="header-right">
+              <!-- info utente -->
+              <div class="main-user">
+                <div class="img-container">
+                  <img src="./img/avatar_1.jpg" alt="`Immagine di ${mainUser.name}`"
+                  />
+                </div>
+                <h3>michele</h3>
+              </div>
+
+              <!-- icone -->
+              <ul class="icons">
+                <li><i class="fa-solid fa-magnifying-glass"></i></li>
+                <li><i class="fa-solid fa-paperclip"></i></li>
+                <li><i class="fa-solid fa-ellipsis-vertical"></i></li>
+              </ul>
+            </div>
+
+         
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="./js/script.js"></script>
-</body>
+    <script src="js/main.js"></script>
+  </body>
 </html>

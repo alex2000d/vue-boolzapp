@@ -12,133 +12,120 @@ body{
     background: linear-gradient(#009688 0%, #009688 130px, #d9dbd5 130px, #d9dbd5 100%);
 }
 
-.container{
-    background-color: #fff;
-    width: 80vw;
-    height: 90vh;
-    display: flex;
+.container {
+  width: 80vw;
+  height: 90vh;
+  display: flex;
 }
-/* sezione header sinistra */
-.left-section{
-    width: 35%;
-    
-  }
-
-.right-section{
-    width: 65%;
-    background-image: url(../img/mine.jpg);
+.header-left,
+.header-right {
+  background-color: gray;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
 }
-
-.header-left
-.header-right{
-    height: 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-}
-.main-user{
-    display: flex;
-    align-items: center;
-    background-color: #d9dbd5;
-    height: 70px;
-}
-
-
 .img-container {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
-    display: flex;
-    align-items: center;
-    margin-left: 30px;
-    margin-top: 5px;
-  }
-
-  .icons {
-    display: flex;
-    gap: 15px;
-    padding-left: 180px;
-    cursor: pointer;
-    font-size: 20px;
-    color: #a1a2a1;
-  }
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
 
   img {
     max-width: 100%;
     height: auto;
     border-radius: 50%;
+    display: block;
   }
-
-  ul{
-    list-style-type: none;
-  }
-  /* main sezione di sinistra */
-  .icon-container {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-    background-color: #ffffff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color:#009688
-  }
-
-  .main-left {
-    height: calc(100% - 60px);
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-    
-  }
-
-  .notifications {
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    background-color: rgb(85, 242, 253);
-  }
-
-  .notifications-chat {
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    background-color: #a5a5a5;
-  }
-  
-  a{
-    text-decoration: none;
-  }
-
-  .serch i {
-    color: gray;
-    background-color: #ffffff;
-    width: 20%;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-    border: 0.5px solid black;
-    border-right: none;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    cursor: pointer;
-    
-  }
-  .serch input {
-    width: 80%;
-    padding: 10px 0;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
-    border: 0.5px solid black;
-    border-left: none;
+}
+.icons {
+    color: #d9dbd5;
+  display: flex;
+  gap: 15px;
 }
 
-.serch{
+/* !colonna di sinistra */
+.left-column {
+  background-color: gray;
+  width: 35%;
+}
+/* *main */
+.main-left {
+  height: calc(100% - 80px);
+  display: flex;
+  flex-direction: column;
+}
+.notifications {
+  background-color: rgb(81, 233, 250);
+  display: flex;
+  align-items: center;
+  height: 70px;
+}
+.icon-container {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(81, 233, 250);
+}
+.left-search i {
+    color: #d9dbd5;
+  background-color: #ffffff;
+  width: 20%;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border: 0.5px solid gray;
+  border-right: none;
+  align-items: center;
+  display: flex;
+  padding: 10px;
+
+}
+.left-search input {
+  width: 80%;
+  padding: 10px 0;
+  border-left: none;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border: 0.5px solid gray;
+  border-left: none;
+}
+.left-search{
     display: flex;
     padding: 10px;
+    background-color: #ffffff;
+    
 }
+.contacts {
+  background-color: #ffffff;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+.contacts ul {
+  border-right: 2px solid gray;
+}
+.contacts li {
+  border-bottom: 1px solid gray;
+}
+
+a{
+    text-decoration: none;
+}
+
+i{
+    font-size: 20px;
+    
+    cursor: pointer;
+}
+ul{
+    list-style-type: none;
+}
+
+
 
 
 
