@@ -9,23 +9,42 @@
 </head>
 <body>
     <div id="app">
+        <!-- contenitore per l'app -->
         <div class="container">
-           <div class="left-section">
-                <div class="header">
-                    <div class="userimg">
-                        <img class="cover" src="./img/avatar_io.jpg" alt="sofia">
-                        
-                    </div>
-                    <span class="text">sofia</span>
-                    <div class="icons">
-                        <ul>
-                            <li><i class="fa-regular fa-circle"></i></li>
-                            <li><i class="fa-regular fa-folder"></i></li>
-                            <li><i class="fa-solid fa-ellipsis-vertical"></i></li>
-                        </ul>
-                    </div>
+            <!-- *sezione di sinistra -->
+            <div class="left-section">
+              <!--header di sinistra -->
+              <div class="header-left">
+                <!-- info profilo -->
+                <div class="main-user">
+                  <div class="img-container">
+                    <img src="./img/avatar_io.jpg" alt="`Immagine di ${mainUser.name}`"/>
+                  </div>
+                  <h3>sofia</h3>
+                  <!-- icone -->
+                  <ul class="icons">
+                    <li><i class="fa-solid fa-circle-notch"></i></li>
+                    <li><i class="fa-solid fa-message"></i></li>
+                    <li><i class="fa-solid fa-ellipsis-vertical"></i></li>
+                  </ul>
+                </div>
               </div>
-           </div>
+              <!-- main sezione di sinistra -->
+              <div class="main-left">
+                <div class="notifications">
+                  <div class="icon-container">
+                    <i class="fa-solid fa-bell-slash"></i>
+                  </div>
+                  <div class="notifications-alert">
+                    <div>Ricevi notifiche di nuovi messaggi</div>
+                    <a href="#">Attiva notifiche desktop</a>
+                  </div>
+                </div>
+                <div class="serch">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input  type="text" placeholder="cerca o inizia una nuova chat">
+                </div>
+           <!-- sezione di destra -->
            <div class="right-section"></div>
         </div>
     </div>
