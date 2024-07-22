@@ -51,14 +51,15 @@
             <!-- lista chat -->
             <div class="contacts">
               <ul>
-                <li v-for="contact in contacts">
+                <li v-for="(contact, index) in contacts">
                   <!-- info -->
-                  <div class="mainuserchat">
+                  <div class="mainuserchat" :class="(index == currentContact ? 'contact-active' : null)"  @click="changeContact(index)">
+                    
                     <div class="img-container">
-                      <img :src="contact.avatar" alt=""/>
+                      <img :src="contacts[index].avatar" alt=""/>
                     </div>
                     <div>
-                      <h4>{{ contact.name }}</h4>
+                      <h4>{{ contacts[index].name }}</h4>
                       <p>{{ contact.name }}</p>
                     </div>
                   </div>
@@ -75,7 +76,7 @@
             <!-- header di destra -->
             <div class="header-right">
               <!-- info utente -->
-              <div class="main-user">
+              <div class="main-user" >
                 <div class="img-container">
                   <img :src="contacts[0].avatar" alt=""/>
                 </div>
@@ -92,7 +93,14 @@
 
             <!-- chat messaggi -->
             <div class="chat"></div>
-    
+            <ul class="chat flex flex-column align-center">
+              <li
+                v-for="message in contacts[currentContact].messages"
+                class="message flex"
+                :class="checkStatus(message.status)">
+                <div class="text">{{message.message}}</div>
+              </li>
+            </ul>
         </div>
 
           <!-- sezione input per scrivere messaggio -->

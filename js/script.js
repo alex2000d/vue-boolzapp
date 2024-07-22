@@ -4,6 +4,7 @@ const {createApp} = Vue;
 createApp({
     data(){
         return {
+            currentContact : 0,
              mainuser: {
                 name: "sofia",
                 avatar: "./img/avatar_io.jpg",
@@ -170,27 +171,18 @@ createApp({
                     }
                 ],
             },
-        ]
-        
-        }
+        ],
+    }
     },
-      
     methods: {
-        mainuserchat(){
-            if (this.active_image == this.slides.length - 1){
-                this.active_image = 0;
-            }
-            else {
-                this.active_image++;
-            }
+        checkStatus(status) {
+          return status;
         },
-        previusly_image(){
-            if (this.active_image == 0){
-                this.active_image = this.slides.length - 1;
-            }
-            else {
-                this.active_image--;
-            }
-        }
-  }
+        changeContact(index) {
+          this.currentContact = index;
+        },
+        selectedContact(index) {
+          if (this.currentContact === index) return "selected";
+        },
+      },
 }).mount('#app');
