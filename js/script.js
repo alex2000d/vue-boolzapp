@@ -4,6 +4,7 @@ const {createApp} = Vue;
 createApp({
     data(){
         return {
+            userText: null,
             currentContact : 0,
              mainuser: {
                 name: "sofia",
@@ -202,9 +203,10 @@ createApp({
           setTimeout(this.contactAnswer, 1000);
         },
         filtercontact(){
-            if(this.contact !=''){
+            console.log(userText);
+            if(this.userTexttext !=''){
                 this.contacts.forEach((contact) => {
-                    if(!contacts.name.toLowerCase().icludes(this.searchtext.toLowerCase())) {
+                    if(!contact.name.toLowerCase().icludes(this.userText.toLowerCase())) {
                         contact.visible = false;
                     }
             });     
