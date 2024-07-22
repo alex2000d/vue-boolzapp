@@ -181,8 +181,40 @@ createApp({
         changeContact(index) {
           this.currentContact = index;
         },
-        selectedContact(index) {
-          if (this.currentContact === index) return "selected";
+        contactAnswer() {
+          this.contacts[this.currentContact].messages.push({
+            date: "10/01/2020 15:51:00",
+            message: "ok!",
+            status: "received",
+          });
         },
+        newMessage() {
+          if (this.userText.trim() === "") {
+            return;
+          } else {
+            this.contacts[this.currentContact].messages.push({
+              date: "10/01/2020 15:51:00",
+              message: this.userText,
+              status: "sent",
+            });
+            this.userText = "";
+          }
+          setTimeout(this.contactAnswer, 1000);
+        },
+        filtercontact(){
+            if(this.contact !=''){
+                this.contacts.forEach((contact) => {
+                    if(!contacts.name.toLowerCase().icludes(this.searchtext.toLowerCase())) {
+                        contact.visible = false;
+                    }
+            });     
+         }
+         else(
+            this.contacts.forEach((contact) => {
+                contact.visible = true;
+            })
+         )
+        }
       },
+    
 }).mount('#app');

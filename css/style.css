@@ -189,6 +189,22 @@ ul{
     list-style-type: none;
 }
 
+.sent {
+  display: flex;
+  justify-content: flex-end;
+}
+.sent .text {
+  background-color: rgb(5, 196, 5);
+}
+.received .text {
+  background-color: white;
+  display: flex;
+  justify-content: flex-start;
+}
+.selected {
+  background-color: grey;
+}
+
 
 
 

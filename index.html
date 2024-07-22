@@ -45,13 +45,13 @@
 
             <div class="left-search">
               <i class="fa-solid fa-magnifying-glass"></i>
-              <input type="text" placeholder="Cerca o inizia una nuova chat" />
+              <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchtext" />
             </div>
 
             <!-- lista chat -->
             <div class="contacts">
               <ul>
-                <li v-for="(contact, index) in contacts">
+                <li v-for="(contact, index) in contacts" v-show="contact.visible">
                   <!-- info -->
                   <div class="mainuserchat" :class="(index == currentContact ? 'contact-active' : null)"  @click="changeContact(index)">
                     
@@ -98,7 +98,7 @@
                 v-for="message in contacts[currentContact].messages"
                 class="message flex"
                 :class="checkStatus(message.status)">
-                <div class="text">{{message.message}}</div>
+                <div class=" sent text">{{message.message}}</div>
               </li>
             </ul>
         </div>
@@ -106,7 +106,8 @@
           <!-- sezione input per scrivere messaggio -->
           <div class="right-search">
             <i class="fa-regular fa-face-smile"></i>
-            <input type="text" placeholder="Scrivi un messaggio" />
+            <input type="text" placeholder="Scrivi un messaggio"  @keyup.enter="newMessage"
+            v-model="userText" />
             <i class="fa-solid fa-microphone"></i>
           </div>
         </div>
