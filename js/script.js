@@ -4,9 +4,9 @@ const {createApp} = Vue;
 createApp({
     data(){
         return {
-            userText: null,
-            currentContact : 0,
-             mainuser: {
+             search: '',
+              currentContact : 0,
+               mainuser: {
                 name: "sofia",
                 avatar: "./img/avatar_io.jpg",
               },
@@ -179,22 +179,25 @@ createApp({
         checkStatus(status) {
           return status;
         },
+        // funzione che cambia la lista contatti
         changeContact(index) {
           this.currentContact = index;
         },
+        // funzione che aggiunge i messaggi alla chat
         contactAnswer() {
           this.contacts[this.currentContact].messages.push({
-            date: "10/01/2020 15:51:00",
+            date: new Date().toLocaleString() ,
             message: "ok!",
             status: "received",
           });
         },
+        // funzione che genera il messaggio ok dopo un secondo
         newMessage() {
           if (this.userText.trim() === "") {
             return;
           } else {
             this.contacts[this.currentContact].messages.push({
-              date: "10/01/2020 15:51:00",
+              date: new Date().toLocaleString(),
               message: this.userText,
               status: "sent",
             });
@@ -202,21 +205,13 @@ createApp({
           }
           setTimeout(this.contactAnswer, 1000);
         },
-        filtercontact(){
-            console.log(userText);
-            if(this.userTexttext !=''){
-                this.contacts.forEach((contact) => {
-                    if(!contact.name.toLowerCase().icludes(this.userText.toLowerCase())) {
-                        contact.visible = false;
-                    }
-            });     
-         }
-         else(
-            this.contacts.forEach((contact) => {
-                contact.visible = true;
-            })
-         )
+        // funzione che filtra per la barra di ricerca
+        filtercontacts(){
+           const ricerca = this.search.toLowerCase()
+           this.contacts.forEach(contact => {
+            contact.visible = contact.name.toLowerCase().includes(ricerca);
+           });
         }
-      },
+      }, 
     
 }).mount('#app');
